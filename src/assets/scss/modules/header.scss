@@ -1,0 +1,131 @@
+// header style
+.header {
+  width: 100%;
+
+  &-banner {
+    position: relative;
+    max-width: 2070px;
+    width: 100%;
+    background-color: #e9eae2;
+  }
+
+  &-item {
+    position: absolute;
+    top: 100px;
+    left: 16.1%;
+  }
+
+  .address {
+    max-width: 31%;
+    width: 100%;
+    background-color: #7acec3;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 200px 120px;
+    justify-content: flex-end;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      padding: 1px;
+      background-color: #fff;
+      bottom: -1px;
+      left: 1px;
+      transform: rotateZ(-47.1deg);
+      transform-origin: 0 0;
+      width: 147%;
+    }
+
+    &-info-item{
+      padding-left: 36%;
+    }
+
+    &-item{
+      padding-bottom: 45px;
+    }
+  }
+
+  .social-wrap {
+    max-width: 325px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 50px 0 40px;
+  }
+
+}
+
+.main-nav {
+  width: 250px;
+  height: 240px;
+  border: 6px solid #e9eae2;
+  position: absolute;
+  top: 100px;
+  right: 450px;
+  transition: 0.5s ease-in-out;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 100px 85px 100px 0;
+
+  @include max-w(3000px) {
+    right: 330px;
+  }
+  &__list {
+    width: 0.1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 1;
+    transition: 0.3s;
+    overflow: hidden;
+  }
+}
+
+.menu-item .link {
+  color: #ffffff;
+  font-family: $fontFamily;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 50px;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
+
+  &:hover {
+    border-bottom: 3px solid #fff;
+  }
+}
+
+.menu__show {
+  width: 1450px;
+  border: 6px solid #f8c255;
+  background-color: #f8c255;
+  overflow: visible;
+  transition: 0.3s;
+  right: 0;
+
+  .main-nav__list {
+    width: 1200px;
+    overflow: visible;
+  }
+
+  .line1 {
+    transform: rotate(45deg) translate(11px, 10px);
+  }
+
+  .line2 {
+    transform: rotate(495deg);
+
+  }
+
+  .line3 {
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+}

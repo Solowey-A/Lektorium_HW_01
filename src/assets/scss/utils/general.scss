@@ -1,0 +1,231 @@
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  height: 100%;
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $tableWidth) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 14px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+section, .section {
+  position: relative;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+section {
+  position: relative;
+}
+
+.page-container {
+  max-width: $containerWidth;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $containerPadding;
+  padding-right: $containerPadding;
+  flex: 0 0 auto;
+}
+
+.flex{
+  display: flex;
+
+  &-col{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-row{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.header-item__title{
+  color: #393d3c;
+  font-family: $fontFamily;
+  font-weight: 400;
+  line-height: 36px;
+  text-transform: uppercase;
+  max-width: 180px;
+  width: 100%;
+  padding-top: 9px;
+  padding-bottom: 125px;
+  @include fluid-font(25px, 36px, 320px, 3000px);
+}
+
+.header-info{
+  @include fluid-font(16px, 26px, 320px, 3000px);
+  color: $default-color;
+  font-family: $fontFamily;
+  font-weight: 400;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+//
+.headline-default{
+  color: $default-color;
+  font-family: $fontFamily;
+  @include fluid-font(22px, 48px, 320px, 3000px);
+  font-weight: 300;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin: 0 0 38px;
+}
+.description-default{
+  color: $default-color;
+  font-family: $fontFamily;
+  @include fluid-font(14px, 24px, 320px, 3000px);
+  font-weight: 300;
+  line-height: 24px;
+  text-transform: uppercase;
+
+  &-bold{
+    font-weight: 700;
+  }
+}
+.view-project-default{
+  color: $default-color;
+  font-family: $fontFamily;
+  @include fluid-font(20px, 36px, 320px, 3000px);
+  font-weight: 300;
+  line-height: 24px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-left: 70px;
+
+  &__link{
+    color: $default-color;
+  }
+
+  svg{
+    width: 38px;
+    height: 30px;
+    position: absolute;
+    left: 15px;
+    transition: 0.4s;
+  }
+
+  &:hover{
+    svg{
+      left: 25px;
+    }
+  }
+}
+.headline-neutral{
+  color: $neutral-primary ;
+  font-family: $fontFamily;
+  @include fluid-font(22px, 48px, 320px, 3000px);
+  font-weight: 300;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin: 0 0 38px;
+}
+.description-neutral{
+  color: $neutral-primary ;
+  font-family: $fontFamily;
+  @include fluid-font(14px, 24px, 320px, 3000px);
+  font-weight: 300;
+  line-height: 24px;
+  text-transform: uppercase;
+
+  &-bold{
+    font-weight: 700;
+  }
+}
+.view-project-neutral{
+  color: $neutral-primary;
+  font-family: $fontFamily;
+  @include fluid-font(20px, 36px, 320px, 3000px);
+  font-weight: 300;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding-left: 70px;
+  position: relative;
+  cursor: pointer;
+
+  &__link{
+    color: $neutral-primary;
+  }
+
+  svg{
+    width: 38px;
+    height: 30px;
+    position: absolute;
+    left: 15px;
+    transition: 0.4s;
+  }
+
+  &:hover{
+    svg{
+      left: 20px;
+    }
+  }
+}
+.like{
+  color: $danger-color;
+  font-family: $fontFamily;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.heart{
+  width: 48px;
+  height: 43px;
+  margin-bottom: 10px;
+
+  svg{
+    margin-bottom: 5px;
+  }
+  &:after{
+    content: '+200';
+    color: $danger-color;
+  }
+}
+
+.italic{
+  font-style: italic;
+}
