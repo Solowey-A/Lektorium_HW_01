@@ -5,8 +5,10 @@
 @import "utils/reset";
 @import "utils/general";
 
+@import "pages/home";
+@import "pages/single-fondue";
+
 @import "modules/social";
 @import "modules/buttons";
 @import "modules/header";
-
-@import "pages/home";
+@import "modules/footer";

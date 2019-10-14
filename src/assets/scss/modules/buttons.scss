@@ -6,10 +6,23 @@
   justify-content: space-between;
   cursor: pointer;
 
+  @include max-w(2048px){
+    width: 40px;
+  }
+
+  @include max-w($screen-1k){
+    height: 30px;
+  }
+
   .line{
-    background-color: #ffffff;
+    background-color: $default-color;
     height: 6px;
     width: 80px;
     transition: .5s;
+
+    @include max-w(2048px){
+      height: 3px;
+      width: 40px;
+    }
   }
 }

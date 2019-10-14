@@ -1,19 +1,3 @@
-html {
-  line-height: $mainLineHeight;
-  font-size: $mainFontSize;
-  color: $mainFontColor;
-  height: 100%;
-  @media screen and (max-width: $desktopWidth) {
-    font-size: 16px;
-  }
-  @media screen and (max-width: $tableWidth) {
-    font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    font-size: 14px;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -81,7 +65,7 @@ section {
   }
 }
 
-.header-item__title{
+.logo-title{
   color: #393d3c;
   font-family: $fontFamily;
   font-weight: 400;
@@ -92,6 +76,15 @@ section {
   padding-top: 9px;
   padding-bottom: 125px;
   @include fluid-font(25px, 36px, 320px, 3000px);
+
+  @include max-w($screen-2k){
+    padding-bottom: 25px;
+  }
+
+  @include max-w(480px){
+    padding-bottom: 10px;
+    line-height: 22px;
+  }
 }
 
 .header-info{
@@ -161,6 +154,10 @@ section {
   line-height: 28px;
   text-transform: uppercase;
   margin: 0 0 38px;
+
+  @include max-w(2048px){
+    margin: 10px 0;
+  }
 }
 .description-neutral{
   color: $neutral-primary ;
@@ -177,7 +174,7 @@ section {
 .view-project-neutral{
   color: $neutral-primary;
   font-family: $fontFamily;
-  @include fluid-font(20px, 36px, 320px, 3000px);
+  @include fluid-font(16px, 36px, 320px, 3000px);
   font-weight: 300;
   line-height: 24px;
   text-transform: uppercase;
@@ -194,12 +191,13 @@ section {
     height: 30px;
     position: absolute;
     left: 15px;
+    top: -4px;
     transition: 0.4s;
   }
 
   &:hover{
     svg{
-      left: 20px;
+      left: 25px;
     }
   }
 }
@@ -214,8 +212,16 @@ section {
 
 .heart{
   width: 48px;
-  height: 43px;
+
   margin-bottom: 10px;
+
+  @include max-w(2048px){
+    width: 38px;
+  }
+
+  @include max-w($screen-1k){
+    width: 28px;
+  }
 
   svg{
     margin-bottom: 5px;
@@ -223,6 +229,7 @@ section {
   &:after{
     content: '+200';
     color: $danger-color;
+    @include fluid-font(13px, 20px, 320px, 3000px);
   }
 }
 

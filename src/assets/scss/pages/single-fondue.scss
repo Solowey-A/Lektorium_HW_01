@@ -1,0 +1,125 @@
+.single-fondue{
+  &-item{
+    display: none;
+  }
+}
+
+.show{
+  display: block;
+}
+.single-fondue{
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/assets/img/Home/projects/single_fondue_background.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+
+  @include max-w(2048px){
+    align-items: flex-start;
+    background-size: contain;
+  }
+
+  .product-image, .wrap{
+    display: none;
+  }
+
+  .fondue-item{// old class content
+    position: relative;
+    max-width: 65%;
+    width: 100%;
+    top: 100px;
+  }
+
+  &-item{
+    max-width: 1086px;
+    width: 100%;
+
+    @include max-w(1680px){
+      max-width: 800px;
+    }
+
+    @include max-w(1280px){
+      max-width: 500px;
+    }
+
+    &__description{
+      color: $neutral-fourth;
+      font-family: $fontFamily;
+      @include fluid-font(18px, 28px, 320px, 3000px);
+      font-weight: 300;
+      line-height: 28px;
+      margin: 15px 0 100px;
+
+      @include max-w(1680px){
+        margin: 15px 0;
+      }
+    }
+  }
+  .slider{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .single-fondue-button{
+    height: 200px;
+    width: 200px;
+    border: 2px solid $border-base;
+    position: absolute;
+    top: 150px;
+    right: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @include max-w(1920px){
+      height: 100px;
+      width: 100px;
+    }
+
+    @include max-w(1280px){
+      top: 50px;
+      right: 50px;
+    }
+
+    &-line-1{
+      height: 2px;
+      width: 40px;
+      background-color: $neutral-fourth;
+      transform: rotateZ(-45deg) translate(0, 1px);
+      transition: .3s;
+    }
+
+    &-line-2{
+      height: 2px;
+      width: 40px;
+      background-color: $neutral-fourth;
+      transform: rotateZ(45deg);
+      transition: .3s;
+    }
+
+    &:hover{
+      .single-fondue-button-line-1{
+        transform: rotateZ(45deg)
+      }
+
+      .single-fondue-button-line-2{
+        transform: rotate(-45deg)translate(2px, -1px)
+      }
+    }
+  }
+}

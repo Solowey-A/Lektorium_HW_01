@@ -6,6 +6,44 @@
 
 .projects-section {
   width: 100%;
+  @include max-w(1680px){
+    flex-wrap: wrap;
+  }
+
+  .first-row{
+    @include max-w(1024px){
+      flex-wrap: wrap;
+    }
+  }
+
+  .second-row{
+    @include max-w(1024px){
+      flex-wrap: wrap;
+    }
+  }
+
+  .third-row{
+    @include max-w(768px){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .aside{
+    @include max-w(1680px){
+      display: flex;
+      flex-direction: row;
+    }
+    @include max-w(1680px){
+      flex-wrap: wrap;
+    }
+
+
+    @include max-w(1024px){
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
   .section-header {
     color: #fefefe;
     font-family: $fontFamily;
@@ -16,6 +54,26 @@
     text-transform: uppercase;
     right: 100px;
     bottom: 320px;
+
+    @include max-w($screen-2k){
+      bottom: 200px;
+    }
+
+    @include max-w(2048px){
+      bottom: 100px;
+      right: 100px;
+    }
+
+    @include max-w(1024px){
+     bottom: 35px;
+    }
+
+    @include max-w(768px){
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
   }
   &-header {
     max-width: 45%;
@@ -25,22 +83,60 @@
     overflow: hidden;
     padding: 100px 0 200px 120px;
 
+    @include max-w(2048px){
+      padding: 100px 0 0 50px;
+    }
+
+    @include max-w(1024px){
+      max-width: 100%;
+      width: 100%;
+      padding: 30px 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include max-w(768px){
+      flex-direction: column;
+      align-items: center;
+    }
+
     &:after {
       content: '';
       display: block;
       position: absolute;
       padding: 1px;
-      background-color: #fff;
+      background-color: $default-color;
       bottom: -1px;
       left: -1px;
       transform: rotateZ(-47.1deg);
       transform-origin: 0 0;
       width: 147%;
+
+      @include max-w(1024px){
+        background-color: transparent;
+      }
+    }
+  }
+
+  &-item{
+    @include max-w(1024px){
+      display: flex;
+      flex-direction: row;
     }
   }
   .list__item {
     position: relative;
     max-width: 190px;
+    @include max-w(600px){
+      padding: 0 5px;
+    }
+    svg{
+      @include max-w(600px){
+        display: none;
+      }
+    }
+
     &:hover {
       .link {
         color: $neutral-primary;
@@ -52,6 +148,7 @@
     }
   }
   .arrow-right {
+
     svg {
       width: 38px;
       height: 30px;
@@ -63,7 +160,7 @@
   .link {
     color: $default-color;
     font-family: $fontFamily;
-    @include fluid-font(16px, 26px, 320px, 3000px);
+    @include fluid-font(14px, 26px, 320px, 3000px);
     font-weight: 400;
     line-height: 28px;
     text-transform: uppercase;
@@ -77,22 +174,38 @@
     overflow: hidden;
     padding: 100px 0 200px 200px;
 
+    @include max-w($screen-2k){
+      padding: 50px;
+    }
+
     &:after {
       content: '';
       display: block;
       position: absolute;
       padding: 1px;
-      background-color: #fff;
+      background-color: $default-color;
       bottom: -1px;
       left: -1px;
       transform: rotateZ(-47.1deg);
       transform-origin: 0 0;
       width: 147%;
+
+      @include max-w(1680px){
+        background-color: transparent;
+      }
     }
   }
 
   .view-project-neutral {
     margin-bottom: 230px;
+
+    @include max-w($screen-2k){
+      margin-bottom: 130px;
+    }
+
+    @include max-w(2048px){
+      margin-bottom: 80px;
+    }
   }
   .heart {
     margin-left: 135px;
@@ -105,26 +218,101 @@
   position: relative;
 }
 
+.potter, .tabano, .fiji,
+.projects-section-timeline{
+  @include max-w(1680px){
+    width: 50%;
+    height: auto;
+  }
+  @include max-w(1024px){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .fondue {
+
+  @include max-w(1024px){
+    width: 100%;
+  }
+
+  .product-image{
+    @include max-w(1024px){
+      //width: 60%;
+    }
+  }
   &-item {
     position: absolute;
     top: 175px;
     left: 206px;
 
+    @include max-w(2048px){
+      top: 100px;
+      left: 80px;
+    }
+
+    @include max-w(768px){
+      left: 15px;
+      top: 15px;
+      max-width: 300px;
+
+    }
+
     &-list {
       margin-bottom: 153px;
+
+      @include max-w(2048px){
+        margin-bottom: 80px;
+      }
+
+      @include max-w(480px){
+        margin-bottom: 15px !important;
+      }
+    }
+  }
+
+  .wrap{
+    @include max-w(768px){
+      display: flex;
+      flex-direction: row;
+      max-width: 290px;
+
+      .heart{
+        margin-left: 30px;
+      }
+    }
+
+    .view-project-neutral{
+      @include max-w(768px){
+        margin: 0;
+      }
     }
   }
 }
 
 .louis {
+
+  @include max-w(768px){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   &-item {
     position: absolute;
     top: 83px;
     left: 66px;
-
+    @include max-w(768px){
+      left: 50%;
+      transform: translateX(-50%);
+    }
     &-list {
       margin-bottom: 77px;
+      @include max-w(480px){
+        margin-bottom: 15px;
+      }
     }
     .heart {
       fill: $default-color;
@@ -132,10 +320,16 @@
   }
   .view-project-default {
     margin-bottom: 65px;
+    line-height: 32px;
   }
 }
 
 .chair {
+
+  @include max-w(480px){
+    padding: 120px 0 50px;
+    background-color: #eaeaea;
+  }
   &-item {
     position: absolute;
     max-width: 616px;
@@ -146,16 +340,49 @@
     top: 185px;
     right: 135px;
 
+    @include max-w($screen-2k){
+      top: 85px;
+    }
+
+    @include max-w(2048px){
+      max-width: 520px;
+      right: 15px;
+    }
+
+    @include max-w(1024px){
+      max-width: 400px;
+      top: 30px;
+    }
+
+    @include max-w(600px){
+      flex-direction: row-reverse;
+    }
     &-list {
       margin-bottom: 53px;
     }
     .heart {
       fill: $neutral-primary;
+
+      @include max-w(480px){
+        margin-left: 35px;
+      }
+    }
+  }
+
+  .view-project-neutral{
+    @include max-w(480px){
+      margin-bottom: 15px;
+      width: 180px;
     }
   }
 }
 
 .sesann {
+
+  @include max-w(480px){
+    padding: 40px 0 120px;
+    background-color: #fcfcfc;
+  }
   &-item {
     position: absolute;
     bottom: 44px;
@@ -166,14 +393,41 @@
     justify-content: space-between;
     max-width: 835px;
     width: 100%;
+
+    @include max-w($screen-2k){
+      bottom: 15px;
+    }
+    @include max-w($screen-1k){
+      bottom: 0;
+    }
+
+    @include max-w(1680px){
+      padding: 0 15px;
+    }
+
+    @include max-w(768px){
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    .view-project-neutral {
+      margin-bottom: 0 !important;
+    }
   }
-  .view-project-neutral {
-    margin: 0;
+  .wrap{
+    .heart{
+      @include max-w(480px){
+        margin: 0;
+      }
+    }
   }
 }
 
 .alessi {
-
+  @include max-w(1024px){
+    width: 100%;
+    background-color: #cecece;
+  }
   &-item {
     position: absolute;
     top: 161px;
@@ -181,6 +435,15 @@
 
     &-list {
       margin-bottom: 65px;
+
+      @include max-w(2048px){
+        margin-bottom: 15px;
+      }
+    }
+
+    @include max-w(2048px){
+      top: 15px;
+      right: 15px;
     }
   }
 
@@ -195,12 +458,25 @@
 }
 
 .potter {
+
+  @include max-w(1024px){
+    background-color: #dfe0d9;
+  }
+
+  @include max-w(480px){
+    padding: 200px 0 0;
+  }
   &-item {
     position: absolute;
     top: 73px;
     left: 88px;
     max-width: 300px;
     width: 100%;
+
+    @include max-w(2048px){
+      top: 20px;
+      left: 20px;
+    }
   }
   .description {
     margin-bottom: 32px;
@@ -209,13 +485,41 @@
     @include fluid-font(16px, 24px, 320px, 3000px);
     font-weight: 300;
     line-height: 24px;
+
+    @include max-w(768px){
+      margin-bottom: 15px;
+    }
   }
   .view-project-neutral {
     margin-bottom: 53px;
+
+    @include max-w(2048px){
+      margin-bottom: 15px;
+    }
+  }
+  .wrap{
+    @include max-w(768px){
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .heart{
+    @include max-w(768px){
+      margin-left: 30px;
+    }
   }
 }
 
 .tabano {
+
+  @include max-w(1024px){
+    background-color: #e9eae2;
+  }
+
+  @include max-w(480px){
+    padding-bottom: 150px;
+  }
   &-item {
     position: absolute;
     bottom: 84px;
@@ -226,9 +530,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include max-w($screen-2k){
+      bottom: 50px;
+    }
+
+    @include max-w(2048px){
+      padding: 0 15px;
+    }
+
+    @include max-w($screen-1k){
+      bottom: 15px;
+    }
+
+    @include max-w(480px){
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  .view-project-neutral {;
+  .view-project-neutral {
     margin: 0;
   }
 
@@ -238,6 +559,9 @@
 }
 
 .fiji {
+  @include max-w(480px){
+    padding: 150px 0 0;
+  }
   &-item {
     max-width: 300px;
     width: 100%;
@@ -245,17 +569,81 @@
     top: 103px;
     right: 150px;
 
+    @include max-w($screen-2k){
+      right: 50px;
+    }
+
+    @include max-w(2048px){
+      right: 15px;
+      top: 15px;
+    }
+
+    @include max-w($screen-1k){
+      max-width: 265px;
+    }
+
+    @include max-w(1680px){
+      position: absolute;
+      top: -200px;
+    }
+
+    @include max-w(1024px){
+      top: 30px;
+    }
+
     &-list {
       margin-bottom: 55px;
+
+      @include max-w(480px){
+        margin-bottom: 0;
+      }
+    }
+  }
+  img{
+    @include max-w(1680px){
+      position: absolute;
+      top: -250px;
+    }
+
+    @include max-w(1024px){
+      position: relative;
+      top: 0;
+    }
+  }
+  .view-project-neutral {
+    margin-bottom: 49px;
+
+    @include max-w($screen-2k){
+      width: 100%;
+      margin: 15px;
+    }
+
+    @include max-w(2048px){
+      margin-bottom: 15px;
     }
   }
 
-  .view-project-neutral {
-    margin-bottom: 49px;
+  .wrap{
+    @include max-w(480px){
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .heart{
+      @include max-w(480px){
+        margin: 0;
+      }
+    }
   }
 }
 
 .timeline-item {
+
+  @include max-w(1024px){
+    max-width: 500px;
+    width: 100%;
+  }
   .timeline {
     color: $neutral-primary;
     font-family: $fontFamily;
@@ -264,10 +652,23 @@
     line-height: 28px;
     text-transform: uppercase;
     margin-bottom: 21px;
+
+    @include max-w(1680px){
+      text-align: center;
+    }
+  }
+
+  .timeline-list{
+    @include max-w(1680px){
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
   }
   .timeline-list__item {
     position: relative;
     max-width: 60px;
+
     &:hover {
       .arrow-right svg {
         transition: .4s;
@@ -278,6 +679,7 @@
   .arrow-right {
     position: absolute;
     left: -40px;
+
     svg {
       width: 38px;
       height: 30px;
@@ -302,16 +704,39 @@
   padding-right: 340px;
   background-color: $neutral-secondary;
 
+  @include max-w(2048px){
+    padding-right: 150px;
+  }
+
+  @include max-w(1680px){
+    padding-right: 15px;
+  }
+
+  @include max-w(1280px){
+    padding-right: 0;
+    padding-bottom: 25px;
+  }
+  .studio-headline{
+    @include max-w(1280px){
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
   &-header {
     max-width: 35%;
     width: 100%;
-    min-height: 1000px;
-    background-color: $light-color;
     position: relative;
     overflow: hidden;
-    padding: 100px 0 200px 120px;
 
-    &:after {
+    @include max-w(1280px){
+      max-width: 100%;
+      overflow: hidden;
+      background-color: $light-color;
+      height: 80px;
+    }
+
+    &:before {
       content: '';
       display: block;
       position: absolute;
@@ -322,6 +747,10 @@
       transform: rotateZ(-47.1deg);
       transform-origin: 0 0;
       width: 147%;
+
+      @include max-w(1280px){
+        display: none;
+      }
     }
   }
 
@@ -336,20 +765,62 @@
     position: absolute;
     bottom: 337px;
     right: 219px;
+
+    @include max-w($screen-2k){
+      bottom: 200px;
+      right: 100px;
+    }
+
+    @include max-w(2048px){
+      bottom: 50px;
+      right: 50px;
+    }
+
+    @include max-w(1280px){
+      right: 0;
+      left: 0;
+      bottom: 20px;
+      text-align: center;
+    }
   }
 
   .studio-info{
     max-width: 2070px;
     width: 100%;
-    padding: 188px 0 0 234px;
+    padding: 160px 0 0 205px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+
+    @include max-w($screen-2k){
+      padding: 80px 0 0 205px;
+    }
+
+    @include max-w(2048px){
+      padding: 60px 0 0 60px;
+    }
+
+    @include max-w($screen-1k){
+      padding: 20px 0 0 20px;
+    }
+
+    @include max-w(1280px){
+      padding: 20px 20px 0;
+    }
+
+    @include max-w(768px){
+      flex-wrap: wrap;
+    }
 
     &__item{
       width: 100%;
 
       &:nth-child(1){
         padding-right: 100px;
+
+        @include max-w(1680px){
+          padding-right: 30px;
+        }
       }
     }
   }
@@ -358,8 +829,16 @@
     margin-bottom: 40px;
     color: $neutral-primary;
     font-family: $fontFamily;
-    @include fluid-font(20px, 36px, 320px, 3000px);
+    @include fluid-font(14px, 36px, 320px, 3000px);
     line-height: 36px;
+
+    @include max-w($screen-2k){
+      margin-bottom: 20px;
+    }
+
+    @include max-w(1680px){
+      line-height: 26px;
+    }
   }
 
   .awards-headline{
@@ -383,6 +862,10 @@
 
   .awards-image{
     margin-bottom: 86px;
+
+    @include max-w(1440px){
+      margin-bottom: 20px;
+    }
   }
 
   .awards-description{
@@ -390,6 +873,10 @@
     flex-direction: row;
     justify-content: space-between;
     padding-top: 50px;
+
+    @include max-w(600px){
+      flex-wrap: wrap;
+    }
 
     &__item{
       display: flex;
@@ -412,18 +899,323 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 336px;
-    padding-top: 132px;
+    padding: 132px 0 204px 336px;
+
+    @include max-w($screen-2k){
+      padding: 100px 0 100px 336px;
+    }
+    @include max-w(2048px){
+      padding: 100px 0 100px 150px;
+    }
+
+    @include max-w(1440px){
+      padding: 50px 0 50px 50px;
+    }
+
+    @include max-w(1280px){
+      padding: 20px 20px 0 !important;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
     &-description{
       display: flex;
       flex-direction: column;
       max-width: 525px;
       width: 100%;
+
+      &__header{
+        font-family: $fontFamily;
+        @include fluid-font(18px, 28px, 320px, 3000px);
+        line-height: 36px;
+      }
+
+      &__info{
+        font-family: $fontFamily;
+        @include fluid-font(14px, 24px, 320px, 3000px);
+        font-weight: 300;
+        line-height: 28px;
+        margin: 23px 0;
+
+        @include max-w(2048px){
+          margin: 10px 0;
+        }
+      }
     }
 
     &-person-card{
       margin-left: 60px;
+
+      @include max-w(1280px){
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+
+      &__name{
+        color: $neutral-primary;
+        font-family: $fontFamily;
+        @include fluid-font(16px, 26px, 320px, 3000px);
+        font-weight: 700;
+        line-height: 32px;
+        text-transform: uppercase;
+      }
+
+      &__position{
+        color: $neutral-primary;
+        font-family: $fontFamily;
+        @include fluid-font(14px, 24px, 320px, 3000px);
+        font-weight: 400;
+        line-height: 32px;
+        text-transform: uppercase;
+      }
+    }
+
+    &-social{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 28px;
+    }
+
+    .cv{
+      display: flex;
+      flex-direction: row;
+      color: $link-color;
+      position: relative;
+
+      @include max-w(2048px){
+        font-size: 18px;
+      }
+
+      &-arrow-left{
+        width: 30px;
+        transform: rotateY(-180deg);
+        fill: $link-color;
+
+        @include max-w(2048px){
+          width: 20px;
+        }
+
+        svg{
+          position: absolute;
+          right: 15px;
+          bottom: 0;
+          transition: .4s;
+        }
+      }
+
+      &:hover{
+        svg{
+          right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.news{
+  background-color: #e5e9df;
+  display: flex;
+  flex-direction: row;
+  padding-right: 340px;
+
+  @include max-w(2048px){
+    padding-right: 150px;
+  }
+
+  @include max-w(1680px){
+    padding-right: 20px;
+  }
+
+  @include max-w(1280px){
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  &-heading{
+    position: relative;
+    overflow: hidden;
+    max-width: 35%;
+    width: 100%;
+
+    @include max-w(1280px){
+      max-width: 100%;
+      background-color: #d4edbf;
+      height: 80px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      padding: 1px;
+      background-color: #fff;
+      bottom: -1px;
+      left: -1px;
+      transform: rotateZ(-47.1deg);
+      transform-origin: 0 0;
+      width: 147%;
+
+      @include max-w(1280px){
+        display: none;
+      }
+    }
+
+    &__header{
+      position: absolute;
+      font-weight: 400;
+      line-height: 28px;
+      text-transform: uppercase;
+      font-family: $fontFamily;
+      color: $default-color;
+      @include fluid-font(25px, 96px, 320px, 3000px);
+      right: 273px;
+      bottom: 339px;
+
+      @include max-w($screen-2k){
+        right: 100px;
+        bottom: 200px;
+      }
+
+      @include max-w(1280px){
+        bottom: 25px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &-item{
+    max-width: 740px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include max-w($screen-2k){
+      max-width: 650px;
+    }
+
+    @include max-w(2048px){
+      max-width: 560px;
+    }
+
+    @include max-w(1920px){
+      max-width: 520px;
+    }
+
+    @include max-w(1440px){
+      max-width: 420px;
+    }
+
+    @include max-w(1280px){
+      max-width: 600px !important;
+      padding: 15px;
+    }
+
+    &-wrap{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 161px 0 0 205px;
+      width: 100%;
+
+      @include max-w($screen-2k){
+        padding: 80px 0 0 80px;
+      }
+
+      @include max-w(2048px){
+        padding: 60px 0 0 60px;
+      }
+
+      @include max-w(1680px){
+        padding: 15px 0 0 15px;
+      }
+
+      @include max-w(1280px){
+        padding: 0;
+      }
+
+      @include max-w(992px){
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    &-headline{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      min-height: 145px;
+      justify-content: space-between;
+
+      @include max-w(1920px){
+        margin: 0;
+      }
+      @include max-w(1440px){
+        min-height: 108px;
+      }
+    }
+    .wrap{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 210px;
+
+      @include max-w(1440px){
+        min-height: 150px;
+      }
+    }
+    &__header{
+      color: $neutral-primary;
+      font-family: $fontFamily;
+      @include fluid-font(18px, 48px, 320px, 3000px);
+      font-weight: 700;
+      line-height: 48px;
+      text-transform: uppercase;
+
+      @include max-w(1440px){
+        line-height: 30px;
+      }
+    }
+
+    &__date{
+      color: $neutral-third;
+      font-family: $fontFamily;
+      @include fluid-font(14px, 24px, 320px, 3000px);
+      font-weight: 400;
+      line-height: 48px;
+      text-transform: uppercase;
+    }
+
+    &__description{
+      padding: 46px 0 20px;
+      color: $neutral-third;
+      font-family: $fontFamily;
+      @include fluid-font(14px, 24px, 320px, 3000px);
+      font-weight: 400;
+      line-height: 28px;
+
+      @include max-w(1920px){
+        padding: 15px 0 20px;
+      }
+
+      @include max-w(1440px){
+        padding: 5px 0;
+        line-height: 22px;
+      }
+    }
+
+    &__link{
+      text-align: right;
+      color: $link-color;
+      font-family: $fontFamily;
+      @include fluid-font(14px, 24px, 320px, 3000px);
+      font-weight: 400;
+      line-height: 28px;
+      text-transform: uppercase;
     }
   }
 }

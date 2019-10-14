@@ -1,6 +1,10 @@
 .fa-facebook-f, .fa-twitter, .fa-linkedin-in{
   color: #7acec3;
   font-size: 38px;
+
+  @include max-w(2048px){
+    font-size: 20px;
+  }
 }
 .fa-facebook-f{
   margin-right: 34px;
@@ -11,9 +15,80 @@
 .fa-linkedin-in{
   margin-right: 28px;
 }
+
+.fa-facebook-f, .fa-twitter, .fa-linkedin-in{
+  @include max-w(2048px){
+    margin-right: 10px;
+  }
+}
 .google-plus{
   svg{
     width: 38px;
     height: auto;
+
+    @include max-w(2048px){
+      width: 20px;
+    }
   }
 }
+
+.staff{
+  .fa-facebook-f, .fa-twitter, .fa-linkedin-in{
+    color: $link-color;
+    font-size: 28px;
+
+    @include max-w(2048px){
+      font-size: 20px;
+    }
+  }
+  .fa-facebook-f{
+    margin-right: 34px;
+  }
+  .fa-twitter{
+    margin-right: 18px;
+  }
+  .fa-linkedin-in{
+    margin-right: 28px;
+  }
+
+  .fa-facebook-f, .fa-twitter, .fa-linkedin-in{
+    @include max-w(2048px){
+      margin-right: 10px;
+    }
+  }
+  .google-plus{
+    svg{
+      width: 28px;
+      height: auto;
+      fill: $link-color;
+
+      @include max-w(2048px){
+        width: 20px;
+      }
+    }
+  }
+}
+
+.single-fondue{
+  .fa-facebook-f, .fa-twitter, .fa-linkedin-in{
+    color: $neutral-primary;
+    font-size: 28px;
+  }
+  .fa-facebook-f{
+    margin-right: 34px;
+  }
+  .fa-twitter{
+    margin-right: 18px;
+  }
+  .fa-linkedin-in{
+    margin-right: 28px;
+  }
+
+  &-item-social-envelope{
+    svg{
+      fill: $neutral-primary;
+      width: 28px;
+    }
+  }
+}
+

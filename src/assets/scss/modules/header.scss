@@ -2,17 +2,52 @@
 .header {
   width: 100%;
 
+  @include max-w(1680px){
+    flex-direction: column-reverse;
+  }
+
   &-banner {
     position: relative;
     max-width: 2070px;
     width: 100%;
     background-color: #e9eae2;
+
+    @include max-w(375px){
+      padding: 80px 0;
+    }
   }
 
   &-item {
     position: absolute;
     top: 100px;
     left: 16.1%;
+
+    @include max-w(2048px){
+      top: 50px;
+      left: 50px;
+    }
+
+    @include max-w(375px){
+      top: 15px;
+      left: 15px;
+    }
+
+    &__logo{
+      @include max-w(2048px){
+        width: 80%;
+      }
+      @include max-w($screen-1k){
+        width: 60%;
+      }
+
+      @include max-w(1024px){
+        width: 40%;
+      }
+
+      @include max-w(600px){
+        width: 10%;
+      }
+    }
   }
 
   .address {
@@ -23,6 +58,11 @@
     overflow: hidden;
     padding: 100px 0 200px 120px;
     justify-content: flex-end;
+
+    @include max-w(1680px){
+      max-width: 100%;
+      padding: 0;
+    }
 
     &:after {
       content: '';
@@ -35,14 +75,26 @@
       transform: rotateZ(-47.1deg);
       transform-origin: 0 0;
       width: 147%;
+
+      @include max-w(1680px){
+        display: none;
+      }
     }
 
     &-info-item{
       padding-left: 36%;
+
+      @include max-w(1680px){
+        padding: 22px;
+      }
     }
 
     &-item{
       padding-bottom: 45px;
+
+      @include max-w(1680px){
+        display: none;
+      }
     }
   }
 
@@ -53,6 +105,10 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: 0 50px 0 40px;
+
+    @include max-w(2048px){
+      padding: 0;
+    }
   }
 
 }
@@ -60,7 +116,7 @@
 .main-nav {
   width: 250px;
   height: 240px;
-  border: 6px solid #e9eae2;
+  border: 6px solid $neutral-secondary;
   position: absolute;
   top: 100px;
   right: 450px;
@@ -75,6 +131,27 @@
   @include max-w(3000px) {
     right: 330px;
   }
+
+  @include max-w(2048px){
+    padding: 35px 25px;
+    height: 100px;
+    width: 100px;
+    border: 3px solid $neutral-secondary;
+  }
+
+  @include max-w($screen-1k){
+    top: 50px;
+  }
+
+  @include max-w(1680px){
+    top: 0;
+    right: 100px !important;
+    border: 3px solid transparent;
+  }
+
+  @include max-w(1024px){
+    right: 0 !important;
+  }
   &__list {
     width: 0.1px;
     display: flex;
@@ -88,9 +165,9 @@
 }
 
 .menu-item .link {
-  color: #ffffff;
+  color: $default-color;
   font-family: $fontFamily;
-  font-size: 28px;
+  @include fluid-font(14px, 28px, 320px, 3000px);
   font-weight: 400;
   line-height: 50px;
   text-transform: uppercase;
@@ -98,7 +175,7 @@
   transition: 0.3s;
 
   &:hover {
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid $default-color;
   }
 }
 
@@ -108,11 +185,31 @@
   background-color: #f8c255;
   overflow: visible;
   transition: 0.3s;
-  right: 0;
+
+  @include max-w(2048px){
+    width: 1200px;
+    border: 3px solid #f8c255;
+  }
+
+  @include max-w($screen-1k){
+    width: 800px;
+  }
+
+  @include max-w(1024px){
+    width: 100%;
+  }
 
   .main-nav__list {
     width: 1200px;
     overflow: visible;
+
+    @include max-w(2048px){
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
 
   .line1 {

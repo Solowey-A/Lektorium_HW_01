@@ -1,1 +1,101 @@
-// footer style
+.footer {
+  display: flex;
+  flex-direction: row;
+  background: #e9eae2;
+
+  @include max-w(992px){
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-map {
+    width: 50%;
+
+    @include max-w(1152px){
+      width: 40%;
+    }
+  }
+
+  &-info{
+    padding: 301px 340px 0 233px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include max-w(2048px){
+      padding: 150px 150px 0 150px;
+    }
+
+    @include max-w(1920px){
+      padding: 50px 50px 0;
+    }
+
+    @include max-w(1152px){
+      padding: 20px 20px 0;
+    }
+
+    @include max-w(992px){
+      width: 100%;
+    }
+
+    &-wrap{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      @include max-w(375px){
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-item{
+      @include max-w(1920px){
+        width: 25%;
+      }
+
+      @include max-w(480px){
+        width: 40% !important;
+      }
+    }
+    &-address, .tel, .mailto{
+      color: $neutral-primary;
+      font-family: $fontFamily;
+      @include fluid-font(16px, 26px, 320px, 3000px);
+      font-weight: 400;
+      line-height: 28px;
+      text-transform: uppercase;
+
+      &__item{
+
+        &:nth-child(5){
+          margin-bottom: 38px;
+        }
+      }
+    }
+  }
+
+  &-copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 110px;
+    color: #191919;
+    font-family: $fontFamily;
+    @include fluid-font(10px, 24px, 320px, 3000px);
+    font-weight: 400;
+    line-height: 43.2px;
+
+    @include max-w(1152px){
+      padding-bottom: 25px;
+    }
+
+    &-logo {
+      svg {
+        width: 15px;
+      }
+    }
+  }
+}
