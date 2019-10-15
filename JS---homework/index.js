@@ -1,37 +1,43 @@
-let array =  [-1,-8,-2],
-    max = getMaxValue(array),
-    min = getMinValue(array),
-    sum = getSumValue(array);
+let arr = [1, undefined, 3, 5, -3, 'sdf', 'a', NaN, 15, -5],
+    newArr = filterArray(arr),
+    max = getMaxValue(newArr),
+    min = getMinValue(newArr),
+    sum = getSumValue(newArr);
 
 alert('Максимум' + max);
 alert('Минимум' + min);
 alert('Сумма' + sum);
 
-function getMaxValue(array){
-    let max = array[0];
-    for (let i = 0; i < array.length; i++) {
+function filterArray(arr) {
+    function filterer(arr) {
+        return isNaN(arr) === false;
+    }
 
-        if (max < array[i]) max = array[i];
+    arr = arr.filter(filterer);
+    return arr;
+}
+
+function getMaxValue(newArr) {
+    let max = newArr[0];
+    for (let i = 0; i < newArr.length; i++) {
+
+        if (max < newArr[i]) max = newArr[i];
     }
     return max;
 }
 
-
-function getMinValue(array){
-    let min = array[0];
-    for (let i = 0; i < array.length; i++) {
-        if (min > array[i]) min = array[i];
+function getMinValue(newArr) {
+    let min = newArr[0];
+    for (let i = 0; i < newArr.length; i++) {
+        if (min > newArr[i]) min = newArr[i];
     }
     return min;
 }
 
-function getSumValue(array){
-    let sum = array[0];
-    for (let i = 0; i < array.length; i++) {
-        if(!isNaN(array[i]) || array[i]) {
-            sum += array[i];
-        }
+function getSumValue(newArr) {
+    let sum = 0;
+    for (let i = 0; i < newArr.length; i++) {
+        sum += newArr[i];
     }
     return sum;
 }
-
